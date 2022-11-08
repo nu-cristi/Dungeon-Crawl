@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
@@ -8,7 +9,7 @@ namespace DungeonCrawl.Actors.Characters
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                // Move up
+                
                 TryMove(Direction.Up);
             }
 
