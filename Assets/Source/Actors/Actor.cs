@@ -44,7 +44,7 @@ namespace DungeonCrawl.Actors
 
             if (actorAtTargetPosition == null)
             {
-                // No obstacle found, just move
+                // No obstacle found, just move 
                 Position = targetPosition;
             }
             else
