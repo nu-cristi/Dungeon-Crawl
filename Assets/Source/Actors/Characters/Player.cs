@@ -14,6 +14,7 @@ namespace DungeonCrawl.Actors.Characters
         public List<Item> Inventory = new List<Item>();
         public int Attack = 10;
         private bool isTrue = true;
+        
         protected override void OnUpdate(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W))
@@ -54,6 +55,7 @@ namespace DungeonCrawl.Actors.Characters
                     {
                         Attack += 5;
                         ActorManager.Singleton.DestroyActor(item);
+                        SetSprite(26);
                     }
 
                     if (item is Food)
