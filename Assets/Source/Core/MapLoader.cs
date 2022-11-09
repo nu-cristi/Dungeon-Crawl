@@ -79,6 +79,9 @@ namespace DungeonCrawl.Core
                     ActorManager.Singleton.Spawn<Trees>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
                     break;
+                case 'l':
+                    ActorManager.Singleton.Spawn<Ladder>(position);
+                    break;
                 case ' ':
                     break;
                 default:

@@ -46,7 +46,7 @@ namespace DungeonCrawl.Actors.Characters
             {
                 // UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
                 // OnCollision(this);
-                var item = ActorManager.Singleton.GetActorAt<Item>(this.Position);
+                // var item = ActorManager.Singleton.GetActorAt<Item>(this.Position);
             }   
         }
         
