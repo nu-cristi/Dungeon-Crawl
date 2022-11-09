@@ -5,6 +5,6 @@ namespace DungeonCrawl.Actors.Static
         public override int DefaultSpriteId => 431;
         public override string DefaultName => "Door";
 
-        public override bool Detectable => false;
+        public override bool Detectable => true;
     }
 }

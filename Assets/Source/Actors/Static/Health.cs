@@ -8,7 +8,7 @@ namespace DungeonCrawl.Actors.Static
     public class Health : Item
     {
         public override int DefaultSpriteId => 801;
-        public override string DefaultName => "Health";
+        public override string DefaultName => "Cheese";
         public override bool Detectable => true;
      
     }

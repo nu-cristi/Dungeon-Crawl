@@ -56,20 +56,20 @@ namespace DungeonCrawl.Actors.Characters
 
                     Inventory.Add(item);
                     
-                    UserInterface.Singleton.SetText(Inventory.ToString(), UserInterface.TextPosition.TopLeft);
+                    UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
 
                 }
                 
             }   
         }
         
-        public  override string ToString()
+        public  string ToString(List<Item> playerList)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("Your inventory:\n");
             foreach (var item in Inventory)
             {
-                sb.Append($"1 - {item.DefaultName}");
+                sb.Append($"{item.DefaultName}:   1\n");
             }
 
             return sb.ToString();
