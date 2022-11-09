@@ -13,7 +13,7 @@ namespace DungeonCrawl.Actors.Characters
     {
         public List<Item> Inventory = new List<Item>();
         public static int Attack = 10;
-        private bool isTrue = true;
+        private bool isTrue = false;
         protected override void OnUpdate(float deltaTime)
         {
             // UserInterface.Singleton.SetText("Press I to see Invetory\n", UserInterface.TextPosition.TopLeft);
@@ -76,17 +76,19 @@ namespace DungeonCrawl.Actors.Characters
             }  
             if (Input.GetKeyDown(KeyCode.I))
             {
-                if (isTrue)
-                {
-                    UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
-                    isTrue = false;
-                }
-                else
-                {
-                    UserInterface.Singleton.SetText("", UserInterface.TextPosition.TopLeft);
-                    isTrue = true;
-                }
-            } 
+                isTrue = !isTrue;
+            }
+            
+            if (isTrue)
+            {
+                UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
+                
+            }
+            else
+            {
+                UserInterface.Singleton.SetText("", UserInterface.TextPosition.TopLeft);
+                
+            }
         }
         
         public  string ToString(List<Item> playerList)
@@ -103,17 +105,7 @@ namespace DungeonCrawl.Actors.Characters
             return sb.ToString();
         }
         
-        // public override bool OnCollision(Actor anotherActor)
-        // {
-        //     if (anotherActor is Skeleton)
-        //     {   
-        //         ApplyDamage(Skeleton.Attack);
-        //         UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
-        //
-        //     }
-        //     
-        //     return false;
-        // }
+        
         
         protected override void OnDeath()
         {

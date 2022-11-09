@@ -10,6 +10,7 @@ namespace DungeonCrawl.Actors.Characters
             if (anotherActor is Player)
             {   
                 ApplyDamage(Player.Attack);
+                (anotherActor as Player).Health -= Attack;
             }
             
             return false;
