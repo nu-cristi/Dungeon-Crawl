@@ -52,7 +52,7 @@
      <Compile Include="Assets/Source/Core/MapLoader.cs" />
      <Compile Include="Assets/Source/Utilities.cs" />
      <Compile Include="Assets/Source/Core/GameManager.cs" />
-     <Compile Include="Assets/Source/Actors/Static/Health.cs" />
+     <Compile Include="Assets\Source\Actors\Static\Food.cs" />
      <Compile Include="Assets/Source/Core/ActorManager.cs" />
      <Compile Include="Assets/Source/Actors/Static/Weapon.cs" />
      <Compile Include="Assets/Source/Actors/Static/Key.cs" />

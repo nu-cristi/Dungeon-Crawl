@@ -59,8 +59,8 @@ namespace DungeonCrawl.Core
                     ActorManager.Singleton.Spawn<Skeleton>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
                     break;
-                case 'h':
-                    ActorManager.Singleton.Spawn<Health>(position);
+                case 'f':
+                    ActorManager.Singleton.Spawn<Food>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
                     break;
                 case 'k':

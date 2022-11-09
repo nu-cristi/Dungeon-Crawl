@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DungeonCrawl.Actors.Static
 {
-    public class Health : Item
+    public class Food : Item
     {
         public override int DefaultSpriteId => 801;
         public override string DefaultName => "Cheese";

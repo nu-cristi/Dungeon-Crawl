@@ -12,7 +12,7 @@ namespace DungeonCrawl.Actors.Characters
     public class Player : Character
     {
         public List<Item> Inventory = new List<Item>();
-        
+        public int Attack = 10;
         protected override void OnUpdate(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W))
@@ -49,23 +49,40 @@ namespace DungeonCrawl.Actors.Characters
                 if (item != null)
                 {
                     UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
-                    if (item is Weapon || item is Key || item is Health)
+                    if (item is Weapon)
+                    {
+                        Attack += 5;
+                        ActorManager.Singleton.DestroyActor(item);
+                    }
+
+                    if (item is Food)
+                    {
+                        Health += 100;
+                        ActorManager.Singleton.DestroyActor(item);
+                    }
+                    else
                     {
                         ActorManager.Singleton.DestroyActor(item);
                     }
 
                     Inventory.Add(item);
-                    
                     UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
+                    
 
                 }
-                
-            }   
+                  
+            }  
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
+            } 
         }
         
         public  string ToString(List<Item> playerList)
         {
             StringBuilder sb = new StringBuilder();
+            sb.Append($"Health: {Health}\n");
+            sb.Append($"Attack: {Attack}\n\n");
             sb.Append("Your inventory:\n");
             foreach (var item in Inventory)
             {
