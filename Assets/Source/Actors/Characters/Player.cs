@@ -1,4 +1,6 @@
-﻿using Assets.Source.Core;
+﻿using System.Collections.Generic;
+using System.Text;
+using Assets.Source.Core;
 using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEditor;
@@ -9,8 +11,7 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
     {
-        private Health _health = new Health();
-        
+        public List<Item> Inventory = new List<Item>();
         
         protected override void OnUpdate(float deltaTime)
         {
@@ -44,21 +45,36 @@ namespace DungeonCrawl.Actors.Characters
             
             if (Input.GetKeyDown(KeyCode.E))
             {
-                // UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
-                // OnCollision(this);
-                // var item = ActorManager.Singleton.GetActorAt<Item>(this.Position);
+                var item = ActorManager.Singleton.GetActorAt<Item>(this.Position);
+                if (item != null)
+                {
+                    UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
+                    if (item is Weapon || item is Key || item is Health)
+                    {
+                        ActorManager.Singleton.DestroyActor(item);
+                    }
+
+                    Inventory.Add(item);
+                    
+                    UserInterface.Singleton.SetText(Inventory.ToString(), UserInterface.TextPosition.TopLeft);
+
+                }
+                
             }   
         }
         
-        public override bool OnCollision(Actor anotherActor)
+        public  override string ToString()
         {
-            if (anotherActor is Player)
-            {   
-                UserInterface.Singleton.SetText("Press E to pick up item", UserInterface.TextPosition.BottomLeft);
-                ActorManager.Singleton.DestroyActor(_health);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Your inventory:\n");
+            foreach (var item in Inventory)
+            {
+                sb.Append($"1 - {item.DefaultName}");
             }
-            return true;
+
+            return sb.ToString();
         }
+        
         
         
         protected override void OnDeath()

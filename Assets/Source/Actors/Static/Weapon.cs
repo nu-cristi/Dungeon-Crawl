@@ -1,10 +1,10 @@
 namespace DungeonCrawl.Actors.Static
 {
-    public class Weapon : Actor
+    public class Weapon : Item
     {
         public override int DefaultSpriteId => 131;
-        public override string DefaultName => "Door";
+        public override string DefaultName => "Weapon";
 
-        public override bool Detectable => false;
+        public override bool Detectable => true;
     }
 }
