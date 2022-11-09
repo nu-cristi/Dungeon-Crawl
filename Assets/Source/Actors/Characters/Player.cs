@@ -1,6 +1,7 @@
 ﻿using Assets.Source.Core;
 using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -43,8 +44,9 @@ namespace DungeonCrawl.Actors.Characters
             
             if (Input.GetKeyDown(KeyCode.E))
             {
-                UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
-                OnCollision(this);
+                // UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
+                // OnCollision(this);
+                var item = ActorManager.Singleton.GetActorAt<Item>(this.Position);
             }   
         }
         
