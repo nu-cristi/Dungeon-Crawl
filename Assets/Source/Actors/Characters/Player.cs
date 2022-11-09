@@ -13,6 +13,7 @@ namespace DungeonCrawl.Actors.Characters
     {
         public List<Item> Inventory = new List<Item>();
         public int Attack = 10;
+        private bool isTrue = true;
         protected override void OnUpdate(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W))
@@ -74,7 +75,16 @@ namespace DungeonCrawl.Actors.Characters
             }  
             if (Input.GetKeyDown(KeyCode.I))
             {
-                UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
+                if (isTrue)
+                {
+                    UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
+                    isTrue = false;
+                }
+                else
+                {
+                    UserInterface.Singleton.SetText("", UserInterface.TextPosition.TopLeft);
+                    isTrue = true;
+                }
             } 
         }
         
