@@ -3,6 +3,7 @@ using DungeonCrawl.Actors.Static;
 using DungeonCrawl.Core;
 using UnityEngine;
 
+
 namespace DungeonCrawl.Actors.Characters
 {
     public class Player : Character
