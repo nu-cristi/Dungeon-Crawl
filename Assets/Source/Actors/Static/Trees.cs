@@ -6,5 +6,11 @@ namespace DungeonCrawl.Actors.Static
         public override string DefaultName => "Trees";
 
         public override bool Detectable => true;
+        
+        public override bool OnCollision(Actor anotherActor)
+        {
+            
+            return false;
+        }
     }
 }

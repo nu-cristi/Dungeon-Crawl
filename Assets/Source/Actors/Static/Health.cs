@@ -10,6 +10,8 @@ namespace DungeonCrawl.Actors.Static
         public override int DefaultSpriteId => 801;
         public override string DefaultName => "Health";
         public override bool Detectable => true;
+        
+        
 
         
       
