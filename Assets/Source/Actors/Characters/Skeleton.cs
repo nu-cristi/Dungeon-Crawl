@@ -22,6 +22,7 @@ namespace DungeonCrawl.Actors.Characters
                     SetSprite(719);
                     return true;
                 }
+
             }
             return false;
         }

@@ -1,4 +1,4 @@
-﻿using DungeonCrawl.Core;
+﻿using DungeonCrawl.Core; 
 
 namespace DungeonCrawl.Actors.Characters
 {
@@ -7,7 +7,8 @@ namespace DungeonCrawl.Actors.Characters
         // public int Health;
         
 
-        public void ApplyDamage(ref int damage,ref int health)
+
+        public void ApplyDamage(ref int damage, ref int health)
         {
             if (health > 0)
             {
