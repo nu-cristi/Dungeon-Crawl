@@ -4,10 +4,8 @@ namespace DungeonCrawl.Actors.Characters
 {
     public abstract class Character : Actor
     {
-        // public int Health;
+        protected float _elapsed = 0f;
         
-
-
         public void ApplyDamage(ref int damage, ref int health)
         {
             if (health > 0)

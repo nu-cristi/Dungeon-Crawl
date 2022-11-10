@@ -7,7 +7,8 @@ namespace DungeonCrawl.Actors.Characters
     {
         public static int Attack = 2;
         public int Health = 20;
-
+        
+        
         public override bool OnCollision(Actor anotherActor)
         {
             if (anotherActor is Player)
@@ -27,28 +28,37 @@ namespace DungeonCrawl.Actors.Characters
             return false;
         }
 
-        // protected override void OnUpdate(float deltaTime)
-        // {
-        //     var rd = new System.Random();
-        //     int randNum = rd.Next(1, 5);
-        //     switch (randNum)
-        //     {
-        //         case 1:
-        //             TryMove(Direction.Up);
-        //             break;
-        //         case 2:
-        //             TryMove(Direction.Right);
-        //             break;
-        //         case 3:
-        //             TryMove(Direction.Left);
-        //             break;
-        //         case 4:
-        //             TryMove(Direction.Down);
-        //             break;
-        //         default:
-        //             throw new ArgumentOutOfRangeException(nameof(Direction), randNum, null);
-        //     }
-        // }
+        protected override void OnUpdate(float deltaTime)
+        {
+            _elapsed += Time.deltaTime;
+            if (Health > 0)
+            {
+                if (_elapsed >= 0.8f)
+                {
+                    var rd = new System.Random();
+                    int randNum = rd.Next(1, 5);
+                    _elapsed %= 0.8f;
+                    
+                    switch (randNum)
+                    {
+                        case 1:
+                            TryMove(Direction.Up);
+                            break;
+                        case 2:
+                            TryMove(Direction.Right);
+                            break;
+                        case 3:
+                            TryMove(Direction.Left);
+                            break;
+                        case 4:
+                            TryMove(Direction.Down);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(Direction), randNum, null);
+                    }
+                }
+            }
+        }
 
         protected override void OnDeath()
         {

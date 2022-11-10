@@ -94,6 +94,10 @@ namespace DungeonCrawl.Core
                     ActorManager.Singleton.Spawn<Bear>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
                     break;
+                case 'o':
+                    ActorManager.Singleton.Spawn<Ciclop>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
                 case ' ':
                     break;
                 default:

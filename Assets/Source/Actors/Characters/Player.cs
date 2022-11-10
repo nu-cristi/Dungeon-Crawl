@@ -14,11 +14,8 @@ namespace DungeonCrawl.Actors.Characters
         public List<Item> Inventory = new List<Item>();
         public static int Attack = 10;
         public int Health = 30;
-        public int weaponCount = 0;
-        int cheeseCount = 0;
-        
-        
         private bool isTrue = false;
+        
         protected override void OnUpdate(float deltaTime)
         {
             if (Input.GetKeyDown(KeyCode.W))
