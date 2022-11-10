@@ -56,6 +56,7 @@ namespace DungeonCrawl.Actors.Characters
                     {
                         Attack += 5;
                         ActorManager.Singleton.DestroyActor(item);
+                        SetSprite(26);
                     }
 
                     if (item is Food)
