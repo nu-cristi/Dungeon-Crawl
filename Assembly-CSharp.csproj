@@ -83,6 +83,7 @@
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
      <None Include="Assets/Resources/map_1.txt" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne.json" />
+     <None Include="Assets/Resources/map_2.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -818,7 +819,6 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Resources\map_2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
