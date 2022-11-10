@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using DungeonCrawl.Actors;
+using DungeonCrawl.Actors.Static;
+using UnityEngine;
 
 namespace DungeonCrawl.Core
 {
@@ -10,6 +12,7 @@ namespace DungeonCrawl.Core
         private void Start()
         {
             MapLoader.LoadMap(1);
+            
         }
     }
 }
