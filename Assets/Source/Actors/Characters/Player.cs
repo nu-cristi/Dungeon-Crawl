@@ -104,6 +104,7 @@ namespace DungeonCrawl.Actors.Characters
             
             foreach (var item in Inventory)
             {
+                
                 sb.Append($"{item.DefaultName}\n");
             }
 
