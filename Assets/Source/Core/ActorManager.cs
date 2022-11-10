@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DungeonCrawl.Actors;
+using DungeonCrawl.Actors.Characters;
+using DungeonCrawl.Actors.Static;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -43,6 +45,11 @@ namespace DungeonCrawl.Core
             return _allActors.FirstOrDefault(actor => actor.Detectable && actor.Position == position);
         }
 
+        public Player Getplayer()
+        {
+            return (_allActors.FirstOrDefault(actor => actor is Player) as Player);
+        }
+
         /// <summary>
         ///     Returns actor of specific subclass present at given position (returns null if no actor is present)
         /// </summary>
@@ -72,7 +79,16 @@ namespace DungeonCrawl.Core
             var actors = _allActors.ToArray();
 
             foreach (var actor in actors)
-                DestroyActor(actor);
+                if (actor is Player)
+                {
+                    var player = Getplayer();
+                    player.Position = (2,5);
+                }
+                else
+                {
+                    DestroyActor(actor);
+                }
+                
         }
 
         /// <summary>

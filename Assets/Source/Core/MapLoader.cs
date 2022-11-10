@@ -82,6 +82,18 @@ namespace DungeonCrawl.Core
                 case 'l':
                     ActorManager.Singleton.Spawn<Ladder>(position);
                     break;
+                case '[':
+                    ActorManager.Singleton.Spawn<Portal>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
+                case 'c':
+                    ActorManager.Singleton.Spawn<WinningCrown>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
+                case 'b':
+                    ActorManager.Singleton.Spawn<Bear>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
                 case ' ':
                     break;
                 default:

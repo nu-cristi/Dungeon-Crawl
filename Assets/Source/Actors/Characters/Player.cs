@@ -14,10 +14,13 @@ namespace DungeonCrawl.Actors.Characters
         public List<Item> Inventory = new List<Item>();
         public static int Attack = 10;
         public int Health = 30;
+        public int weaponCount = 0;
+        int cheeseCount = 0;
+        
+        
         private bool isTrue = false;
         protected override void OnUpdate(float deltaTime)
         {
-            // UserInterface.Singleton.SetText("Press I to see Invetory\n", UserInterface.TextPosition.TopLeft);
             if (Input.GetKeyDown(KeyCode.W))
             {
                 // Move up
@@ -95,13 +98,16 @@ namespace DungeonCrawl.Actors.Characters
         
         public  string ToString(List<Item> playerList)
         {
+            
             StringBuilder sb = new StringBuilder();
+            sb.Append("Game Stats:\n");
             sb.Append($"Health: {Health}\n");
             sb.Append($"Attack: {Attack}\n\n");
             sb.Append("Your inventory:\n");
             foreach (var item in Inventory)
             {
-                sb.Append($"{item.DefaultName}:   1\n");
+                
+                sb.Append($"{item.DefaultName}");
             }
 
             return sb.ToString();

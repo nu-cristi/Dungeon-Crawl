@@ -1,4 +1,5 @@
-﻿using DungeonCrawl.Actors;
+﻿using Assets.Source.Core;
+using DungeonCrawl.Actors;
 using DungeonCrawl.Actors.Static;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace DungeonCrawl.Core
         {
             MapLoader.LoadMap(1);
             
+
         }
     }
 }

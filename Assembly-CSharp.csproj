@@ -61,6 +61,8 @@
      <Compile Include="Assets/Source/Actors/Static/Key.cs" />
      <Compile Include="Assets/Source/Actors/Static/Weapon.cs" />
      <Compile Include="Assets/Source/Actors/Characters/Bear.cs" />
+     <Compile Include="Assets\Source\Actors\Static\Portal.cs" />
+     <Compile Include="Assets\Source\Actors\Static\WinningCrown.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
