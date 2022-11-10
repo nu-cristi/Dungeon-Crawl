@@ -27,6 +27,7 @@ namespace DungeonCrawl.Actors.Characters
 
             if (Input.GetKeyDown(KeyCode.S))
             {
+
                 // Move down
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
                 TryMove(Direction.Down);
@@ -34,6 +35,7 @@ namespace DungeonCrawl.Actors.Characters
 
             if (Input.GetKeyDown(KeyCode.A))
             {
+
                 // Move left
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
                 TryMove(Direction.Left);
@@ -41,6 +43,7 @@ namespace DungeonCrawl.Actors.Characters
 
             if (Input.GetKeyDown(KeyCode.D))
             {
+
                 // Move right
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
                 TryMove(Direction.Right);
@@ -59,17 +62,18 @@ namespace DungeonCrawl.Actors.Characters
                         SetSprite(26);
                     }
 
-                    if (item is Food)
+                    else if (item is Food)
                     {
                         Health += 100;
                         ActorManager.Singleton.DestroyActor(item);
                     }
                     else
                     {
+                        Inventory.Add(item);
                         ActorManager.Singleton.DestroyActor(item);
                     }
 
-                    Inventory.Add(item);
+                    
                     UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
                     
 
