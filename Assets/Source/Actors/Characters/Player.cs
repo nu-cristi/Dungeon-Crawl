@@ -62,17 +62,18 @@ namespace DungeonCrawl.Actors.Characters
                         SetSprite(26);
                     }
 
-                    if (item is Food)
+                    else if (item is Food)
                     {
                         Health += 100;
                         ActorManager.Singleton.DestroyActor(item);
                     }
                     else
                     {
+                        Inventory.Add(item);
                         ActorManager.Singleton.DestroyActor(item);
                     }
 
-                    Inventory.Add(item);
+                    
                     UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
                     
 
@@ -104,10 +105,10 @@ namespace DungeonCrawl.Actors.Characters
             sb.Append($"Health: {Health}\n");
             sb.Append($"Attack: {Attack}\n\n");
             sb.Append("Your inventory:\n");
+            
             foreach (var item in Inventory)
             {
-                
-                sb.Append($"{item.DefaultName}");
+                sb.Append($"{item.DefaultName}\n");
             }
 
             return sb.ToString();
