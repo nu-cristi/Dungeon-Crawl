@@ -4,9 +4,17 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Skeleton : Character
     {
-        public int Attack = 2;
+        public static int Attack = 2;
+        int Health = 30;
+
         public override bool OnCollision(Actor anotherActor)
         {
+            if (anotherActor is Player)
+            {   
+                ApplyDamage(Player.Attack, Health);
+                (anotherActor as Player).Health -= Attack;
+            }
+            
             return false;
         }
 

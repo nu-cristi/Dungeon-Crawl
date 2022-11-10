@@ -12,11 +12,12 @@ namespace DungeonCrawl.Actors.Characters
     public class Player : Character
     {
         public List<Item> Inventory = new List<Item>();
-        public int Attack = 10;
-        private bool isTrue = true;
-        
+        public static int Attack = 10;
+        public int Health = 30;
+        private bool isTrue = false;
         protected override void OnUpdate(float deltaTime)
         {
+            // UserInterface.Singleton.SetText("Press I to see Invetory\n", UserInterface.TextPosition.TopLeft);
             if (Input.GetKeyDown(KeyCode.W))
             {
                 // Move up
@@ -77,17 +78,19 @@ namespace DungeonCrawl.Actors.Characters
             }  
             if (Input.GetKeyDown(KeyCode.I))
             {
-                if (isTrue)
-                {
-                    UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
-                    isTrue = false;
-                }
-                else
-                {
-                    UserInterface.Singleton.SetText("", UserInterface.TextPosition.TopLeft);
-                    isTrue = true;
-                }
-            } 
+                isTrue = !isTrue;
+            }
+            
+            if (isTrue)
+            {
+                UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
+                
+            }
+            else
+            {
+                UserInterface.Singleton.SetText("", UserInterface.TextPosition.TopLeft);
+                
+            }
         }
         
         public  string ToString(List<Item> playerList)
@@ -113,5 +116,7 @@ namespace DungeonCrawl.Actors.Characters
 
         public override int DefaultSpriteId => 24;
         public override string DefaultName => "Player";
+        
+        
     }
 }
