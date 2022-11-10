@@ -1,17 +1,17 @@
-﻿using DungeonCrawl.Core;
+﻿using DungeonCrawl.Core; 
 
 namespace DungeonCrawl.Actors.Characters
 {
     public abstract class Character : Actor
     {
-        public int Health = 30;
+        // public int Health = 30;
         
 
-        public void ApplyDamage(int damage)
+        public void ApplyDamage(ref int damage, ref int health)
         {
-            Health -= damage;
+            health -= damage;
             
-            if (Health <= 0)
+            if (health <= 0)
             {
                 // Die
                 OnDeath();
