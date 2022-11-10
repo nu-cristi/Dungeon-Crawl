@@ -1,3 +1,7 @@
+using Assets.Source.Core;
+using DungeonCrawl.Actors.Characters;
+using DungeonCrawl.Core;
+
 namespace DungeonCrawl.Actors.Static
 {
     public class WinningCrown :Item
@@ -6,5 +10,11 @@ namespace DungeonCrawl.Actors.Static
         public override string DefaultName => "Crown";
 
         public override bool Detectable => true;
+        public override bool OnCollision(Actor anotherActor)
+        {
+            ActorManager.Singleton.DestroyAllActors();
+            MapLoader.LoadMap(4);
+            return true;
+        }
     }
 }

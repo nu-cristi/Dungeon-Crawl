@@ -1,4 +1,5 @@
 ﻿using System;
+using DungeonCrawl.Core;
 using UnityEngine;
 
 namespace DungeonCrawl.Actors.Characters
@@ -13,10 +14,19 @@ namespace DungeonCrawl.Actors.Characters
         {
             if (anotherActor is Player)
             {
+                if ((anotherActor as Player).Health > 0)
+                {
+                    (anotherActor as Player).Health -= Attack;
+                }
+                else
+                {
+                    
+                    ActorManager.Singleton.DestroyAllActors();
+                    MapLoader.LoadMap(3);
+                }
                 if (Health > 0)
                 {
                     ApplyDamage(ref Player.Attack, ref Health);
-                    (anotherActor as Player).Health -= Attack;
                 }
                 else
                 {

@@ -98,6 +98,10 @@ namespace DungeonCrawl.Core
                     ActorManager.Singleton.Spawn<Ciclop>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
                     break;
+                case '$':
+                    ActorManager.Singleton.Spawn<Stairs>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
                 case ' ':
                     break;
                 default:

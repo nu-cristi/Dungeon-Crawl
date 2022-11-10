@@ -16,7 +16,7 @@ namespace DungeonCrawl.Actors.Static
             if (anotherActor is Player)
             {   
                 UserInterface.Singleton.SetText($"Level 2", UserInterface.TextPosition.BottomLeft);
-                ActorManager.Singleton.DestroyAllActors();
+                ActorManager.Singleton.DestroyAllActorsExceptPlayer();
                 MapLoader.LoadMap(2);
             }
             return true;

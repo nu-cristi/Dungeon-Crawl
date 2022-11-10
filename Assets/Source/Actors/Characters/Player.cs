@@ -119,7 +119,7 @@ namespace DungeonCrawl.Actors.Characters
         
         protected override void OnDeath()
         {
-            Debug.Log("Oh no, I'm dead!");
+            
         }
 
         public override int DefaultSpriteId => 24;

@@ -74,7 +74,7 @@ namespace DungeonCrawl.Core
         /// <summary>
         ///     Used for cleaning up the scene before loading a new map
         /// </summary>
-        public void DestroyAllActors()
+        public void DestroyAllActorsExceptPlayer()
         {
             var actors = _allActors.ToArray();
 
@@ -88,6 +88,17 @@ namespace DungeonCrawl.Core
                 {
                     DestroyActor(actor);
                 }
+                
+        }
+        
+        public void DestroyAllActors()
+        {
+            var actors = _allActors.ToArray();
+
+            foreach (var actor in actors)
+            {
+                DestroyActor(actor);
+            }
                 
         }
 
