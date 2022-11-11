@@ -12,7 +12,7 @@ namespace DungeonCrawl.Actors.Static
         {
             if (anotherActor is Player)
             {   
-                UserInterface.Singleton.SetText($"Press E to pick up {DefaultName}", UserInterface.TextPosition.BottomLeft);
+                UserInterface.Singleton.SetText($"Press E to\npick up {DefaultName}", UserInterface.TextPosition.BottomLeft);
                 
                 // ActorManager.Singleton.DestroyActor(this);
             }
