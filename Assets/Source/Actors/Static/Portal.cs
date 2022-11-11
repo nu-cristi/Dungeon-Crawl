@@ -9,9 +9,6 @@ namespace DungeonCrawl.Actors.Static
         public override string DefaultName => "Portal";
             
         public override bool Detectable => true;
-            
-        
-        
         public override bool OnCollision(Actor anotherActor)
         {
             if (anotherActor is Player)
@@ -21,7 +18,6 @@ namespace DungeonCrawl.Actors.Static
                     return true;
                 }
             }
-            
             return false;
         }
     }

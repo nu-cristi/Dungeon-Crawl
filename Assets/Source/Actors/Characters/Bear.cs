@@ -8,6 +8,8 @@ namespace DungeonCrawl.Actors.Characters
     {
         public static int Attack = 20;
         public int Health = 60;
+        public override int DefaultSpriteId => 413;
+        public override string DefaultName => "Bear";
         
         public override bool OnCollision(Actor anotherActor)
         {
@@ -19,7 +21,6 @@ namespace DungeonCrawl.Actors.Characters
                 }
                 else
                 {
-                    Debug.Log("intra??");
                     ActorManager.Singleton.DestroyAllActors();
                     MapLoader.LoadMap(3);
                 }
@@ -32,12 +33,10 @@ namespace DungeonCrawl.Actors.Characters
                     SetSprite(720);
                     return true;
                 }
-
             }
             return false;
         }
 
-        
         protected override void OnUpdate(float deltaTime)
         {
             _elapsed += Time.deltaTime;
@@ -70,13 +69,9 @@ namespace DungeonCrawl.Actors.Characters
             }
         }
 
-        
         protected override void OnDeath()
         {
             Debug.Log("Well, I was already dead anyway...");
         }
-
-        public override int DefaultSpriteId => 413;
-        public override string DefaultName => "Bear";
     }
 }

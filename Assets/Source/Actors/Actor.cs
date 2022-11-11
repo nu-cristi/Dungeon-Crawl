@@ -14,14 +14,12 @@ namespace DungeonCrawl.Actors
                 transform.position = new Vector3(value.x, value.y, Z);
             }
         }
-
         private (int x, int y) _position;
         private SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-
             SetSprite(DefaultSpriteId);
         }
 

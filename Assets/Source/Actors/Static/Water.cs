@@ -1,9 +1,9 @@
 namespace DungeonCrawl.Actors.Static
 {
-    public class Trees :Actor
+    public class Water: Actor
     {
-        public override int DefaultSpriteId => 50;
-        public override string DefaultName => "Trees";
+        public override int DefaultSpriteId => 247;
+        public override string DefaultName => "Water";
         public override bool Detectable => true;
         
         public override bool OnCollision(Actor anotherActor)

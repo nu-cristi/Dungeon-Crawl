@@ -8,7 +8,6 @@ namespace DungeonCrawl.Actors.Static
 {
     public abstract class Item : Actor
     {
-         
         public override bool OnCollision(Actor anotherActor)
         {
             if (anotherActor is Player)

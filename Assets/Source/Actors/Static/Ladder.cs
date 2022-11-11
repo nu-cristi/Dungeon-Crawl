@@ -8,7 +8,6 @@ namespace DungeonCrawl.Actors.Static
     {
         public override int DefaultSpriteId => 290;
         public override string DefaultName => "Ladder";
-
         public override bool Detectable => true;
         
         public override bool OnCollision(Actor anotherActor)

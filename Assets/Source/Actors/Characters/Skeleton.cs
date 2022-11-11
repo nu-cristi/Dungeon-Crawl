@@ -8,7 +8,8 @@ namespace DungeonCrawl.Actors.Characters
     {
         public static int Attack = 2;
         public int Health = 20;
-        
+        public override int DefaultSpriteId => 316;
+        public override string DefaultName => "Skeleton";
         
         public override bool OnCollision(Actor anotherActor)
         {
@@ -20,7 +21,6 @@ namespace DungeonCrawl.Actors.Characters
                 }
                 else
                 {
-                    
                     ActorManager.Singleton.DestroyAllActors();
                     MapLoader.LoadMap(3);
                 }
@@ -33,7 +33,6 @@ namespace DungeonCrawl.Actors.Characters
                     SetSprite(719);
                     return true;
                 }
-
             }
             return false;
         }
@@ -74,9 +73,5 @@ namespace DungeonCrawl.Actors.Characters
         {
             Debug.Log("Well, I was already dead anyway...");
         }
-        
-
-        public override int DefaultSpriteId => 316;
-        public override string DefaultName => "Skeleton";
     }
 }

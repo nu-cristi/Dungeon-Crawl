@@ -64,7 +64,9 @@
      <Compile Include="Assets/Source/Actors/Static/WinningCrown.cs" />
      <Compile Include="Assets/Source/Actors/Static/Portal.cs" />
      <Compile Include="Assets/Source/Actors/Characters/Ciclop.cs" />
+     <Compile Include="Assets\Source\Actors\Static\Cactus.cs" />
      <Compile Include="Assets\Source\Actors\Static\Stairs.cs" />
+     <Compile Include="Assets\Source\Actors\Static\Water.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

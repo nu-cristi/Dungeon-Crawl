@@ -28,9 +28,7 @@ namespace DungeonCrawl.Core
                 Destroy(this);
                 return;
             }
-
             Singleton = this;
-
             _allActors = new HashSet<Actor>();
             _spriteAtlas = Resources.Load<SpriteAtlas>("Spritesheet");
         }
@@ -88,7 +86,6 @@ namespace DungeonCrawl.Core
                 {
                     DestroyActor(actor);
                 }
-                
         }
         
         public void DestroyAllActors()
@@ -99,7 +96,6 @@ namespace DungeonCrawl.Core
             {
                 DestroyActor(actor);
             }
-                
         }
 
         /// <summary>

@@ -5,6 +5,7 @@ namespace DungeonCrawl.Actors.Characters
     public abstract class Character : Actor
     {
         protected float _elapsed = 0f;
+        public override int Z => -1;
         
         public void ApplyDamage(ref int damage, ref int health)
         {
@@ -21,8 +22,5 @@ namespace DungeonCrawl.Actors.Characters
         }
 
         protected abstract void OnDeath();
-
-        
-        public override int Z => -1;
     }
 }

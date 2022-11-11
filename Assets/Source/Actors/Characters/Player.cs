@@ -15,6 +15,8 @@ namespace DungeonCrawl.Actors.Characters
         public static int Attack = 10;
         public int Health = 30;
         private bool isTrue = false;
+        public override int DefaultSpriteId => 24;
+        public override string DefaultName => "Player";
         
         protected override void OnUpdate(float deltaTime)
         {
@@ -27,7 +29,6 @@ namespace DungeonCrawl.Actors.Characters
 
             if (Input.GetKeyDown(KeyCode.S))
             {
-
                 // Move down
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
                 TryMove(Direction.Down);
@@ -35,7 +36,6 @@ namespace DungeonCrawl.Actors.Characters
 
             if (Input.GetKeyDown(KeyCode.A))
             {
-
                 // Move left
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
                 TryMove(Direction.Left);
@@ -43,12 +43,10 @@ namespace DungeonCrawl.Actors.Characters
 
             if (Input.GetKeyDown(KeyCode.D))
             {
-
                 // Move right
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomLeft);
                 TryMove(Direction.Right);
             }   
-            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 var item = ActorManager.Singleton.GetActorAt<Item>(this.Position);
@@ -61,7 +59,6 @@ namespace DungeonCrawl.Actors.Characters
                         ActorManager.Singleton.DestroyActor(item);
                         SetSprite(26);
                     }
-
                     else if (item is Food)
                     {
                         Health += 100;
@@ -72,34 +69,25 @@ namespace DungeonCrawl.Actors.Characters
                         Inventory.Add(item);
                         ActorManager.Singleton.DestroyActor(item);
                     }
-
-                    
                     UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
-                    
-
                 }
-                  
             }  
             if (Input.GetKeyDown(KeyCode.I))
             {
                 isTrue = !isTrue;
             }
-            
             if (isTrue)
             {
                 UserInterface.Singleton.SetText(ToString(Inventory), UserInterface.TextPosition.TopLeft);
-                
             }
             else
             {
                 UserInterface.Singleton.SetText("", UserInterface.TextPosition.TopLeft);
-                
             }
         }
         
         public  string ToString(List<Item> playerList)
         {
-            
             StringBuilder sb = new StringBuilder();
             sb.Append("Game Stats:\n");
             sb.Append($"Health: {Health}\n");
@@ -108,22 +96,17 @@ namespace DungeonCrawl.Actors.Characters
             
             foreach (var item in Inventory)
             {
-                
                 sb.Append($"{item.DefaultName}\n");
             }
-
             return sb.ToString();
         }
-        
-        
         
         protected override void OnDeath()
         {
             
         }
 
-        public override int DefaultSpriteId => 24;
-        public override string DefaultName => "Player";
+        
         
         
     }

@@ -28,7 +28,5 @@ namespace DungeonCrawl
                     throw new ArgumentOutOfRangeException(nameof(dir), dir, null);
             }
         }
-
-        
     }
 }
