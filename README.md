@@ -17,3 +17,5 @@ Use the arrow keys or WASD to move your character around the map. Collide with t
 The goal of the game is to explore each level, defeat all enemies, and find the exit to progress to the next level. Be careful not to die, as death is permanent and you will need to start over from the beginning.
 
 <img width="1246" alt="Screenshot 2023-05-04 at 11 06 15" src="https://user-images.githubusercontent.com/101981056/236146285-8e018d1e-9a44-48c8-8e72-acd30f3e30f0.png">
+<img width="1246" alt="Screenshot 2023-05-04 at 11 06 47" src="https://user-images.githubusercontent.com/101981056/236146552-fdb14c9d-99d0-461a-9f8b-560892212a6f.png">
+
